@@ -1,0 +1,908 @@
+Prefix(:=<http://www.semanticweb.org/brunaru/ontologies/2019/1/espim-onto#>)
+Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
+Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
+Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
+Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
+
+
+Ontology(<http://www.semanticweb.org/brunaru/ontologies/2019/1/espim-onto>
+
+Declaration(Class(:Action))
+Declaration(Class(:ActiveEvent))
+Declaration(Class(:ComplexCondition))
+Declaration(Class(:Condition))
+Declaration(Class(:Contact))
+Declaration(Class(:EmptyIntervention))
+Declaration(Class(:EmptyResult))
+Declaration(Class(:Event))
+Declaration(Class(:EventTrigger))
+Declaration(Class(:InteractionSensor))
+Declaration(Class(:IntervalSensor))
+Declaration(Class(:Intervention))
+Declaration(Class(:InterventionResult))
+Declaration(Class(:MediaIntervention))
+Declaration(Class(:MediaPresentation))
+Declaration(Class(:MediaResult))
+Declaration(Class(:MultipleChoiceQuestion))
+Declaration(Class(:Observer))
+Declaration(Class(:OpenQuestion))
+Declaration(Class(:Participant))
+Declaration(Class(:PassiveEvent))
+Declaration(Class(:Person))
+Declaration(Class(:Phase))
+Declaration(Class(:Program))
+Declaration(Class(:QuestionIntervention))
+Declaration(Class(:QuestionResult))
+Declaration(Class(:Relantionship))
+Declaration(Class(:Result))
+Declaration(Class(:ResultsSession))
+Declaration(Class(:ScaleQuestion))
+Declaration(Class(:Sensor))
+Declaration(Class(:SensorResult))
+Declaration(Class(:Status))
+Declaration(Class(:TaskIntervention))
+Declaration(Class(:TaskParameter))
+Declaration(Class(:TaskResult))
+Declaration(ObjectProperty(:containsSensor))
+Declaration(ObjectProperty(:definesActionOf))
+Declaration(ObjectProperty(:definesConditionOf))
+Declaration(ObjectProperty(:definesTrigger))
+Declaration(ObjectProperty(:describesStatusOfParticipant))
+Declaration(ObjectProperty(:groupsInPhase))
+Declaration(ObjectProperty(:hasAction))
+Declaration(ObjectProperty(:hasCondition))
+Declaration(ObjectProperty(:hasContact))
+Declaration(ObjectProperty(:hasEventCondtion))
+Declaration(ObjectProperty(:hasInterventionCondition))
+Declaration(ObjectProperty(:hasMedia))
+Declaration(ObjectProperty(:hasNextPhase))
+Declaration(ObjectProperty(:hasParameter))
+Declaration(ObjectProperty(:hasParticipant))
+Declaration(ObjectProperty(:hasRelantionship))
+Declaration(ObjectProperty(:hasResult))
+Declaration(ObjectProperty(:hasSensor))
+Declaration(ObjectProperty(:isComposedByEvent))
+Declaration(ObjectProperty(:isComposedOfInterventions))
+Declaration(ObjectProperty(:isConditionOfEvent))
+Declaration(ObjectProperty(:isConditionOfIntervention))
+Declaration(ObjectProperty(:isContactOf))
+Declaration(ObjectProperty(:isManagedByObserver))
+Declaration(ObjectProperty(:isMediaOf))
+Declaration(ObjectProperty(:isNextIntervention))
+Declaration(ObjectProperty(:isOnPhase))
+Declaration(ObjectProperty(:isParameterOf))
+Declaration(ObjectProperty(:isPartOfEvent))
+Declaration(ObjectProperty(:isPartOfProgram))
+Declaration(ObjectProperty(:isPartOfSession))
+Declaration(ObjectProperty(:isRelatedToProgram))
+Declaration(ObjectProperty(:isRelationshipOf))
+Declaration(ObjectProperty(:isTriggeredBy))
+Declaration(ObjectProperty(:managesProgram))
+Declaration(ObjectProperty(:resultedFromCollectorOf))
+Declaration(ObjectProperty(:resultedFromInteractionWith))
+Declaration(ObjectProperty(:resultsFromEvent))
+Declaration(ObjectProperty(:resultsFromParticipant))
+Declaration(ObjectProperty(:resultsFromTrigger))
+Declaration(DataProperty(:cActionOperation))
+Declaration(DataProperty(:cActionParameter))
+Declaration(DataProperty(:cComparisonOperator))
+Declaration(DataProperty(:cComparisonValue))
+Declaration(DataProperty(:cConditionalOperation))
+Declaration(DataProperty(:eDescription))
+Declaration(DataProperty(:eTitle))
+Declaration(DataProperty(:fDescription))
+Declaration(DataProperty(:fDurationCondition))
+Declaration(DataProperty(:fIsFirst))
+Declaration(DataProperty(:fTitle))
+Declaration(DataProperty(:iAppPackage))
+Declaration(DataProperty(:iCheckMultiple))
+Declaration(DataProperty(:iIsFirst))
+Declaration(DataProperty(:iMediaType))
+Declaration(DataProperty(:iObligatory))
+Declaration(DataProperty(:iOption))
+Declaration(DataProperty(:iOrderPosition))
+Declaration(DataProperty(:iParameterName))
+Declaration(DataProperty(:iParameterValue))
+Declaration(DataProperty(:iPointSize))
+Declaration(DataProperty(:iScale))
+Declaration(DataProperty(:iStartFromNotification))
+Declaration(DataProperty(:iStatement))
+Declaration(DataProperty(:id))
+Declaration(DataProperty(:mAutoPlay))
+Declaration(DataProperty(:mMediaType))
+Declaration(DataProperty(:mMediaURL))
+Declaration(DataProperty(:pDescription))
+Declaration(DataProperty(:pEnds))
+Declaration(DataProperty(:pStarts))
+Declaration(DataProperty(:pTitle))
+Declaration(DataProperty(:rInteractionEnded))
+Declaration(DataProperty(:rInteractionStarted))
+Declaration(DataProperty(:rResultValue))
+Declaration(DataProperty(:sCollectorDevice))
+Declaration(DataProperty(:sSensorIntent))
+Declaration(DataProperty(:sStartedInPhase))
+Declaration(DataProperty(:sStartedInProgram))
+Declaration(DataProperty(:tPriority))
+Declaration(DataProperty(:tTimeOut))
+Declaration(DataProperty(:tTriggerCondition))
+Declaration(DataProperty(:tType))
+Declaration(DataProperty(:uAlias))
+Declaration(DataProperty(:uEmail))
+Declaration(DataProperty(:uName))
+Declaration(DataProperty(:uPersonalNumber))
+Declaration(DataProperty(:uPhoneNumber))
+Declaration(DataProperty(:uRelantionshipDescription))
+Declaration(DataProperty(:uRelantionshipType))
+############################
+#   Object Properties
+############################
+
+# Object Property: :containsSensor (:containsSensor)
+
+SubObjectPropertyOf(:containsSensor owl:topObjectProperty)
+ObjectPropertyDomain(:containsSensor :ActiveEvent)
+ObjectPropertyRange(:containsSensor :InteractionSensor)
+
+# Object Property: :definesActionOf (:definesActionOf)
+
+SubObjectPropertyOf(:definesActionOf owl:topObjectProperty)
+InverseObjectProperties(:definesActionOf :hasAction)
+FunctionalObjectProperty(:definesActionOf)
+ObjectPropertyDomain(:definesActionOf :Action)
+ObjectPropertyRange(:definesActionOf :ComplexCondition)
+
+# Object Property: :definesConditionOf (:definesConditionOf)
+
+SubObjectPropertyOf(:definesConditionOf owl:topObjectProperty)
+InverseObjectProperties(:definesConditionOf :hasCondition)
+FunctionalObjectProperty(:definesConditionOf)
+ObjectPropertyDomain(:definesConditionOf :Condition)
+ObjectPropertyRange(:definesConditionOf :ComplexCondition)
+
+# Object Property: :definesTrigger (:definesTrigger)
+
+SubObjectPropertyOf(:definesTrigger owl:topObjectProperty)
+InverseObjectProperties(:definesTrigger :isTriggeredBy)
+FunctionalObjectProperty(:definesTrigger)
+ObjectPropertyDomain(:definesTrigger :EventTrigger)
+ObjectPropertyRange(:definesTrigger :Event)
+
+# Object Property: :describesStatusOfParticipant (:describesStatusOfParticipant)
+
+SubObjectPropertyOf(:describesStatusOfParticipant owl:topObjectProperty)
+FunctionalObjectProperty(:describesStatusOfParticipant)
+ObjectPropertyDomain(:describesStatusOfParticipant :Status)
+ObjectPropertyRange(:describesStatusOfParticipant :Participant)
+
+# Object Property: :groupsInPhase (:groupsInPhase)
+
+SubObjectPropertyOf(:groupsInPhase owl:topObjectProperty)
+ObjectPropertyDomain(:groupsInPhase :Phase)
+ObjectPropertyRange(:groupsInPhase :Event)
+
+# Object Property: :hasAction (:hasAction)
+
+SubObjectPropertyOf(:hasAction owl:topObjectProperty)
+FunctionalObjectProperty(:hasAction)
+ObjectPropertyDomain(:hasAction :ComplexCondition)
+ObjectPropertyRange(:hasAction :Action)
+
+# Object Property: :hasCondition (:hasCondition)
+
+SubObjectPropertyOf(:hasCondition owl:topObjectProperty)
+FunctionalObjectProperty(:hasCondition)
+ObjectPropertyDomain(:hasCondition :ComplexCondition)
+ObjectPropertyRange(:hasCondition :Condition)
+
+# Object Property: :hasContact (:hasContact)
+
+SubObjectPropertyOf(:hasContact owl:topObjectProperty)
+InverseObjectProperties(:hasContact :isContactOf)
+ObjectPropertyDomain(:hasContact :Observer)
+ObjectPropertyRange(:hasContact :Contact)
+
+# Object Property: :hasEventCondtion (:hasEventCondtion)
+
+SubObjectPropertyOf(:hasEventCondtion owl:topObjectProperty)
+InverseObjectProperties(:hasEventCondtion :isConditionOfEvent)
+ObjectPropertyDomain(:hasEventCondtion :Event)
+ObjectPropertyRange(:hasEventCondtion :ComplexCondition)
+
+# Object Property: :hasInterventionCondition (:hasInterventionCondition)
+
+SubObjectPropertyOf(:hasInterventionCondition owl:topObjectProperty)
+InverseObjectProperties(:hasInterventionCondition :isConditionOfIntervention)
+ObjectPropertyDomain(:hasInterventionCondition :Intervention)
+ObjectPropertyRange(:hasInterventionCondition :ComplexCondition)
+
+# Object Property: :hasMedia (:hasMedia)
+
+SubObjectPropertyOf(:hasMedia owl:topObjectProperty)
+InverseObjectProperties(:hasMedia :isMediaOf)
+ObjectPropertyDomain(:hasMedia :Intervention)
+ObjectPropertyRange(:hasMedia :MediaPresentation)
+
+# Object Property: :hasNextPhase (:hasNextPhase)
+
+SubObjectPropertyOf(:hasNextPhase owl:topObjectProperty)
+FunctionalObjectProperty(:hasNextPhase)
+ObjectPropertyDomain(:hasNextPhase :Phase)
+ObjectPropertyRange(:hasNextPhase :Phase)
+
+# Object Property: :hasParameter (:hasParameter)
+
+SubObjectPropertyOf(:hasParameter owl:topObjectProperty)
+InverseObjectProperties(:hasParameter :isParameterOf)
+ObjectPropertyDomain(:hasParameter :TaskIntervention)
+ObjectPropertyRange(:hasParameter :TaskParameter)
+
+# Object Property: :hasParticipant (:hasParticipant)
+
+SubObjectPropertyOf(:hasParticipant owl:topObjectProperty)
+ObjectPropertyDomain(:hasParticipant :Program)
+ObjectPropertyRange(:hasParticipant :Participant)
+
+# Object Property: :hasRelantionship (:hasRelantionship)
+
+SubObjectPropertyOf(:hasRelantionship owl:topObjectProperty)
+ObjectPropertyDomain(:hasRelantionship :Participant)
+ObjectPropertyRange(:hasRelantionship :Relantionship)
+
+# Object Property: :hasResult (:hasResult)
+
+SubObjectPropertyOf(:hasResult owl:topObjectProperty)
+InverseObjectProperties(:hasResult :isPartOfSession)
+ObjectPropertyDomain(:hasResult :ResultsSession)
+ObjectPropertyRange(:hasResult :Result)
+
+# Object Property: :hasSensor (:hasSensor)
+
+SubObjectPropertyOf(:hasSensor owl:topObjectProperty)
+ObjectPropertyDomain(:hasSensor :PassiveEvent)
+ObjectPropertyRange(:hasSensor :IntervalSensor)
+
+# Object Property: :isComposedByEvent (:isComposedByEvent)
+
+SubObjectPropertyOf(:isComposedByEvent owl:topObjectProperty)
+InverseObjectProperties(:isComposedByEvent :isPartOfProgram)
+ObjectPropertyDomain(:isComposedByEvent :Program)
+ObjectPropertyRange(:isComposedByEvent :Event)
+
+# Object Property: :isComposedOfInterventions (:isComposedOfInterventions)
+
+SubObjectPropertyOf(:isComposedOfInterventions owl:topObjectProperty)
+InverseObjectProperties(:isComposedOfInterventions :isPartOfEvent)
+ObjectPropertyDomain(:isComposedOfInterventions :ActiveEvent)
+ObjectPropertyRange(:isComposedOfInterventions :Intervention)
+
+# Object Property: :isConditionOfEvent (:isConditionOfEvent)
+
+SubObjectPropertyOf(:isConditionOfEvent owl:topObjectProperty)
+FunctionalObjectProperty(:isConditionOfEvent)
+ObjectPropertyDomain(:isConditionOfEvent :ComplexCondition)
+ObjectPropertyRange(:isConditionOfEvent :Event)
+DisjointObjectProperties(:isConditionOfEvent :isConditionOfIntervention)
+
+# Object Property: :isConditionOfIntervention (:isConditionOfIntervention)
+
+SubObjectPropertyOf(:isConditionOfIntervention owl:topObjectProperty)
+FunctionalObjectProperty(:isConditionOfIntervention)
+ObjectPropertyDomain(:isConditionOfIntervention :ComplexCondition)
+ObjectPropertyRange(:isConditionOfIntervention :Intervention)
+
+# Object Property: :isContactOf (:isContactOf)
+
+SubObjectPropertyOf(:isContactOf owl:topObjectProperty)
+FunctionalObjectProperty(:isContactOf)
+ObjectPropertyDomain(:isContactOf :Contact)
+ObjectPropertyRange(:isContactOf :Observer)
+
+# Object Property: :isManagedByObserver (:isManagedByObserver)
+
+SubObjectPropertyOf(:isManagedByObserver owl:topObjectProperty)
+InverseObjectProperties(:isManagedByObserver :managesProgram)
+ObjectPropertyDomain(:isManagedByObserver :Program)
+ObjectPropertyRange(:isManagedByObserver :Observer)
+
+# Object Property: :isMediaOf (:isMediaOf)
+
+ObjectPropertyDomain(:isMediaOf :MediaPresentation)
+ObjectPropertyRange(:isMediaOf :Intervention)
+
+# Object Property: :isNextIntervention (:isNextIntervention)
+
+SubObjectPropertyOf(:isNextIntervention owl:topObjectProperty)
+FunctionalObjectProperty(:isNextIntervention)
+ObjectPropertyDomain(:isNextIntervention :Intervention)
+ObjectPropertyRange(:isNextIntervention :Intervention)
+
+# Object Property: :isOnPhase (:isOnPhase)
+
+SubObjectPropertyOf(:isOnPhase owl:topObjectProperty)
+FunctionalObjectProperty(:isOnPhase)
+ObjectPropertyDomain(:isOnPhase :Status)
+ObjectPropertyRange(:isOnPhase :Phase)
+
+# Object Property: :isParameterOf (:isParameterOf)
+
+SubObjectPropertyOf(:isParameterOf owl:topObjectProperty)
+FunctionalObjectProperty(:isParameterOf)
+ObjectPropertyDomain(:isParameterOf :TaskParameter)
+ObjectPropertyRange(:isParameterOf :TaskIntervention)
+
+# Object Property: :isPartOfEvent (:isPartOfEvent)
+
+SubObjectPropertyOf(:isPartOfEvent owl:topObjectProperty)
+ObjectPropertyDomain(:isPartOfEvent :Intervention)
+ObjectPropertyRange(:isPartOfEvent :Event)
+
+# Object Property: :isPartOfProgram (:isPartOfProgram)
+
+SubObjectPropertyOf(:isPartOfProgram owl:topObjectProperty)
+FunctionalObjectProperty(:isPartOfProgram)
+ObjectPropertyDomain(:isPartOfProgram :Event)
+ObjectPropertyRange(:isPartOfProgram :Program)
+
+# Object Property: :isPartOfSession (:isPartOfSession)
+
+SubObjectPropertyOf(:isPartOfSession owl:topObjectProperty)
+FunctionalObjectProperty(:isPartOfSession)
+ObjectPropertyDomain(:isPartOfSession :Result)
+ObjectPropertyRange(:isPartOfSession :ResultsSession)
+
+# Object Property: :isRelatedToProgram (:isRelatedToProgram)
+
+SubObjectPropertyOf(:isRelatedToProgram owl:topObjectProperty)
+FunctionalObjectProperty(:isRelatedToProgram)
+ObjectPropertyDomain(:isRelatedToProgram :Status)
+ObjectPropertyRange(:isRelatedToProgram :Program)
+
+# Object Property: :isRelationshipOf (:isRelationshipOf)
+
+SubObjectPropertyOf(:isRelationshipOf owl:topObjectProperty)
+FunctionalObjectProperty(:isRelationshipOf)
+ObjectPropertyDomain(:isRelationshipOf :Relantionship)
+ObjectPropertyRange(:isRelationshipOf :Person)
+
+# Object Property: :isTriggeredBy (:isTriggeredBy)
+
+SubObjectPropertyOf(:isTriggeredBy owl:topObjectProperty)
+ObjectPropertyDomain(:isTriggeredBy :Event)
+ObjectPropertyRange(:isTriggeredBy :EventTrigger)
+
+# Object Property: :managesProgram (:managesProgram)
+
+SubObjectPropertyOf(:managesProgram owl:topObjectProperty)
+ObjectPropertyDomain(:managesProgram :Observer)
+ObjectPropertyRange(:managesProgram :Program)
+
+# Object Property: :resultedFromCollectorOf (:resultedFromCollectorOf)
+
+SubObjectPropertyOf(:resultedFromCollectorOf owl:topObjectProperty)
+FunctionalObjectProperty(:resultedFromCollectorOf)
+ObjectPropertyDomain(:resultedFromCollectorOf :SensorResult)
+ObjectPropertyRange(:resultedFromCollectorOf :Sensor)
+
+# Object Property: :resultedFromInteractionWith (:resultedFromInteractionWith)
+
+SubObjectPropertyOf(:resultedFromInteractionWith owl:topObjectProperty)
+FunctionalObjectProperty(:resultedFromInteractionWith)
+ObjectPropertyDomain(:resultedFromInteractionWith :InterventionResult)
+ObjectPropertyRange(:resultedFromInteractionWith :Intervention)
+
+# Object Property: :resultsFromEvent (:resultsFromEvent)
+
+FunctionalObjectProperty(:resultsFromEvent)
+ObjectPropertyDomain(:resultsFromEvent :ResultsSession)
+ObjectPropertyRange(:resultsFromEvent :Event)
+
+# Object Property: :resultsFromParticipant (:resultsFromParticipant)
+
+FunctionalObjectProperty(:resultsFromParticipant)
+ObjectPropertyDomain(:resultsFromParticipant :ResultsSession)
+ObjectPropertyRange(:resultsFromParticipant :Participant)
+
+# Object Property: :resultsFromTrigger (:resultsFromTrigger)
+
+FunctionalObjectProperty(:resultsFromTrigger)
+ObjectPropertyDomain(:resultsFromTrigger :ResultsSession)
+ObjectPropertyRange(:resultsFromTrigger :EventTrigger)
+
+
+############################
+#   Data Properties
+############################
+
+# Data Property: :cActionOperation (:cActionOperation)
+
+SubDataPropertyOf(:cActionOperation owl:topDataProperty)
+FunctionalDataProperty(:cActionOperation)
+DataPropertyDomain(:cActionOperation :Action)
+DataPropertyRange(:cActionOperation DataOneOf("DISABLE_MANUAL_TIGGER" "GOTO" "LOOP" "MARK_EVENT_COMPLETED" "MARK_EVENT_COUNTER" "NOTIFY_SERVICE" "POSTPONE_EVENT" "SEND_EMAIL_WITH_RESULTS" "SEND_INTERVENTION_WITH_RESULTS" "SEND_WARNING_EMAIL" "SEND_WARNING_SMS"))
+DisjointDataProperties(:cActionOperation :cActionParameter)
+
+# Data Property: :cActionParameter (:cActionParameter)
+
+SubDataPropertyOf(:cActionParameter owl:topDataProperty)
+DataPropertyDomain(:cActionParameter :Action)
+DataPropertyRange(:cActionParameter rdfs:Literal)
+DataPropertyRange(:cActionParameter xsd:anyURI)
+
+# Data Property: :cComparisonOperator (:cComparisonOperator)
+
+SubDataPropertyOf(:cComparisonOperator owl:topDataProperty)
+FunctionalDataProperty(:cComparisonOperator)
+DataPropertyDomain(:cComparisonOperator :Condition)
+DataPropertyRange(:cComparisonOperator DataOneOf("!=" "<" "<=" "==" ">" ">="))
+DisjointDataProperties(:cComparisonOperator :cComparisonValue :cConditionalOperation)
+
+# Data Property: :cComparisonValue (:cComparisonValue)
+
+SubDataPropertyOf(:cComparisonValue owl:topDataProperty)
+FunctionalDataProperty(:cComparisonValue)
+DataPropertyDomain(:cComparisonValue :Condition)
+DataPropertyRange(:cComparisonValue rdfs:Literal)
+DataPropertyRange(:cComparisonValue xsd:anyURI)
+
+# Data Property: :cConditionalOperation (:cConditionalOperation)
+
+SubDataPropertyOf(:cConditionalOperation owl:topDataProperty)
+FunctionalDataProperty(:cConditionalOperation)
+DataPropertyDomain(:cConditionalOperation :Condition)
+DataPropertyRange(:cConditionalOperation DataOneOf("ANSWER" "ATTEMPTS" "COMPLETED" "MISSED" "TRIGGERED"))
+
+# Data Property: :eDescription (:eDescription)
+
+SubDataPropertyOf(:eDescription owl:topDataProperty)
+FunctionalDataProperty(:eDescription)
+DataPropertyDomain(:eDescription :Event)
+DataPropertyRange(:eDescription xsd:string)
+
+# Data Property: :eTitle (:eTitle)
+
+SubDataPropertyOf(:eTitle owl:topDataProperty)
+FunctionalDataProperty(:eTitle)
+DataPropertyDomain(:eTitle :Event)
+DataPropertyRange(:eTitle xsd:string)
+
+# Data Property: :fDescription (:fDescription)
+
+SubDataPropertyOf(:fDescription owl:topDataProperty)
+FunctionalDataProperty(:fDescription)
+DataPropertyDomain(:fDescription :Phase)
+DataPropertyRange(:fDescription xsd:string)
+
+# Data Property: :fDurationCondition (:fDurationCondition)
+
+SubDataPropertyOf(:fDurationCondition owl:topDataProperty)
+FunctionalDataProperty(:fDurationCondition)
+DataPropertyDomain(:fDurationCondition :Phase)
+DataPropertyRange(:fDurationCondition rdfs:Literal)
+
+# Data Property: :fIsFirst (:fIsFirst)
+
+SubDataPropertyOf(:fIsFirst owl:topDataProperty)
+FunctionalDataProperty(:fIsFirst)
+DataPropertyDomain(:fIsFirst :Phase)
+DataPropertyRange(:fIsFirst xsd:boolean)
+
+# Data Property: :fTitle (:fTitle)
+
+SubDataPropertyOf(:fTitle owl:topDataProperty)
+FunctionalDataProperty(:fTitle)
+DataPropertyDomain(:fTitle :Phase)
+DataPropertyRange(:fTitle xsd:string)
+
+# Data Property: :iAppPackage (:iAppPackage)
+
+SubDataPropertyOf(:iAppPackage owl:topDataProperty)
+FunctionalDataProperty(:iAppPackage)
+DataPropertyDomain(:iAppPackage :TaskIntervention)
+DataPropertyRange(:iAppPackage xsd:string)
+
+# Data Property: :iCheckMultiple (:iCheckMultiple)
+
+SubDataPropertyOf(:iCheckMultiple owl:topDataProperty)
+FunctionalDataProperty(:iCheckMultiple)
+DataPropertyDomain(:iCheckMultiple :MultipleChoiceQuestion)
+DataPropertyRange(:iCheckMultiple xsd:boolean)
+
+# Data Property: :iIsFirst (:iIsFirst)
+
+SubDataPropertyOf(:iIsFirst owl:topDataProperty)
+FunctionalDataProperty(:iIsFirst)
+DataPropertyDomain(:iIsFirst :Intervention)
+DataPropertyRange(:iIsFirst xsd:boolean)
+
+# Data Property: :iMediaType (:iMediaType)
+
+SubDataPropertyOf(:iMediaType owl:topDataProperty)
+FunctionalDataProperty(:iMediaType)
+DataPropertyDomain(:iMediaType :MediaIntervention)
+DataPropertyRange(:iMediaType DataOneOf("AUDIO" "DOCUMENT" "IMAGE" "IRL" "SENSOR" "TIMER" "VIDEO"))
+
+# Data Property: :iObligatory (:iObligatory)
+
+SubDataPropertyOf(:iObligatory owl:topDataProperty)
+FunctionalDataProperty(:iObligatory)
+DataPropertyDomain(:iObligatory :Intervention)
+DataPropertyRange(:iObligatory xsd:boolean)
+
+# Data Property: :iOption (:iOption)
+
+SubDataPropertyOf(:iOption owl:topDataProperty)
+DataPropertyDomain(:iOption :MultipleChoiceQuestion)
+DataPropertyRange(:iOption rdfs:Literal)
+DataPropertyRange(:iOption xsd:anyURI)
+
+# Data Property: :iOrderPosition (:iOrderPosition)
+
+SubDataPropertyOf(:iOrderPosition owl:topDataProperty)
+FunctionalDataProperty(:iOrderPosition)
+DataPropertyDomain(:iOrderPosition :QuestionIntervention)
+DataPropertyRange(:iOrderPosition xsd:decimal)
+
+# Data Property: :iParameterName (:iParameterName)
+
+SubDataPropertyOf(:iParameterName owl:topDataProperty)
+FunctionalDataProperty(:iParameterName)
+DataPropertyDomain(:iParameterName :TaskParameter)
+DataPropertyRange(:iParameterName xsd:string)
+
+# Data Property: :iParameterValue (:iParameterValue)
+
+SubDataPropertyOf(:iParameterValue owl:topDataProperty)
+FunctionalDataProperty(:iParameterValue)
+DataPropertyDomain(:iParameterValue :TaskParameter)
+DataPropertyRange(:iParameterValue xsd:string)
+
+# Data Property: :iPointSize (:iPointSize)
+
+SubDataPropertyOf(:iPointSize owl:topDataProperty)
+FunctionalDataProperty(:iPointSize)
+DataPropertyDomain(:iPointSize :ScaleQuestion)
+DataPropertyRange(:iPointSize rdfs:Literal)
+
+# Data Property: :iScale (:iScale)
+
+SubDataPropertyOf(:iScale owl:topDataProperty)
+DataPropertyDomain(:iScale :ScaleQuestion)
+DataPropertyRange(:iScale rdfs:Literal)
+DataPropertyRange(:iScale xsd:anyURI)
+
+# Data Property: :iStartFromNotification (:iStartFromNotification)
+
+SubDataPropertyOf(:iStartFromNotification owl:topDataProperty)
+FunctionalDataProperty(:iStartFromNotification)
+DataPropertyDomain(:iStartFromNotification :TaskIntervention)
+DataPropertyRange(:iStartFromNotification xsd:boolean)
+
+# Data Property: :iStatement (:iStatement)
+
+SubDataPropertyOf(:iStatement owl:topDataProperty)
+FunctionalDataProperty(:iStatement)
+DataPropertyDomain(:iStatement :QuestionIntervention)
+DataPropertyRange(:iStatement rdfs:Literal)
+
+# Data Property: :id (:id)
+
+DataPropertyDomain(:id owl:Thing)
+DataPropertyRange(:id xsd:integer)
+
+# Data Property: :mAutoPlay (:mAutoPlay)
+
+SubDataPropertyOf(:mAutoPlay owl:topDataProperty)
+FunctionalDataProperty(:mAutoPlay)
+DataPropertyDomain(:mAutoPlay :MediaPresentation)
+DataPropertyRange(:mAutoPlay xsd:boolean)
+
+# Data Property: :mMediaType (:mMediaType)
+
+SubDataPropertyOf(:mMediaType owl:topDataProperty)
+FunctionalDataProperty(:mMediaType)
+DataPropertyDomain(:mMediaType :MediaPresentation)
+DataPropertyRange(:mMediaType DataOneOf("AUDIO" "DOCUMENT" "IMAGE" "VIDEO"))
+
+# Data Property: :mMediaURL (:mMediaURL)
+
+SubDataPropertyOf(:mMediaURL owl:topDataProperty)
+FunctionalDataProperty(:mMediaURL)
+DataPropertyDomain(:mMediaURL :MediaPresentation)
+DataPropertyRange(:mMediaURL xsd:anyURI)
+
+# Data Property: :pDescription (:pDescription)
+
+SubDataPropertyOf(:pDescription owl:topDataProperty)
+FunctionalDataProperty(:pDescription)
+DataPropertyDomain(:pDescription :Program)
+DataPropertyRange(:pDescription xsd:string)
+
+# Data Property: :pEnds (:pEnds)
+
+SubDataPropertyOf(:pEnds owl:topDataProperty)
+FunctionalDataProperty(:pEnds)
+DataPropertyDomain(:pEnds :Program)
+DataPropertyRange(:pEnds xsd:dateTimeStamp)
+
+# Data Property: :pStarts (:pStarts)
+
+SubDataPropertyOf(:pStarts owl:topDataProperty)
+FunctionalDataProperty(:pStarts)
+DataPropertyDomain(:pStarts :Program)
+DataPropertyRange(:pStarts xsd:dateTimeStamp)
+
+# Data Property: :pTitle (:pTitle)
+
+SubDataPropertyOf(:pTitle owl:topDataProperty)
+FunctionalDataProperty(:pTitle)
+DataPropertyDomain(:pTitle :Program)
+DataPropertyRange(:pTitle xsd:string)
+
+# Data Property: :rInteractionEnded (:rInteractionEnded)
+
+SubDataPropertyOf(:rInteractionEnded owl:topDataProperty)
+FunctionalDataProperty(:rInteractionEnded)
+DataPropertyDomain(:rInteractionEnded :Result)
+
+# Data Property: :rInteractionStarted (:rInteractionStarted)
+
+SubDataPropertyOf(:rInteractionStarted owl:topDataProperty)
+FunctionalDataProperty(:rInteractionStarted)
+DataPropertyDomain(:rInteractionStarted :Result)
+
+# Data Property: :rResultValue (:rResultValue)
+
+SubDataPropertyOf(:rResultValue owl:topDataProperty)
+FunctionalDataProperty(:rResultValue)
+DataPropertyDomain(:rResultValue :Result)
+DataPropertyRange(:rResultValue rdfs:Literal)
+DataPropertyRange(:rResultValue xsd:anyURI)
+
+# Data Property: :sCollectorDevice (:sCollectorDevice)
+
+SubDataPropertyOf(:sCollectorDevice owl:topDataProperty)
+FunctionalDataProperty(:sCollectorDevice)
+DataPropertyDomain(:sCollectorDevice :Sensor)
+DataPropertyRange(:sCollectorDevice xsd:string)
+
+# Data Property: :sSensorIntent (:sSensorIntent)
+
+SubDataPropertyOf(:sSensorIntent owl:topDataProperty)
+FunctionalDataProperty(:sSensorIntent)
+DataPropertyDomain(:sSensorIntent :Sensor)
+DataPropertyRange(:sSensorIntent xsd:string)
+
+# Data Property: :sStartedInPhase (:sStartedInPhase)
+
+SubDataPropertyOf(:sStartedInPhase owl:topDataProperty)
+FunctionalDataProperty(:sStartedInPhase)
+DataPropertyDomain(:sStartedInPhase :Status)
+DataPropertyRange(:sStartedInPhase xsd:dateTimeStamp)
+
+# Data Property: :sStartedInProgram (:sStartedInProgram)
+
+SubDataPropertyOf(:sStartedInProgram owl:topDataProperty)
+FunctionalDataProperty(:sStartedInProgram)
+DataPropertyDomain(:sStartedInProgram :Status)
+DataPropertyRange(:sStartedInProgram xsd:dateTimeStamp)
+
+# Data Property: :tPriority (:tPriority)
+
+SubDataPropertyOf(:tPriority owl:topDataProperty)
+FunctionalDataProperty(:tPriority)
+DataPropertyDomain(:tPriority :EventTrigger)
+DataPropertyRange(:tPriority DataOneOf("ALARM" "LONG_NOTIFICATION" "SIMPLE_NOTIFICATION"))
+
+# Data Property: :tTimeOut (:tTimeOut)
+
+SubDataPropertyOf(:tTimeOut owl:topDataProperty)
+FunctionalDataProperty(:tTimeOut)
+DataPropertyDomain(:tTimeOut :EventTrigger)
+DataPropertyRange(:tTimeOut xsd:decimal)
+
+# Data Property: :tTriggerCondition (:tTriggerCondition)
+
+SubDataPropertyOf(:tTriggerCondition owl:topDataProperty)
+FunctionalDataProperty(:tTriggerCondition)
+DataPropertyDomain(:tTriggerCondition :EventTrigger)
+DataPropertyRange(:tTriggerCondition xsd:dateTimeStamp)
+DataPropertyRange(:tTriggerCondition xsd:string)
+
+# Data Property: :tType (:tType)
+
+SubDataPropertyOf(:tType owl:topDataProperty)
+FunctionalDataProperty(:tType)
+DataPropertyDomain(:tType :EventTrigger)
+DataPropertyRange(:tType DataOneOf("CONTEXT" "MANUAL" "TIME"))
+
+# Data Property: :uAlias (:uAlias)
+
+SubDataPropertyOf(:uAlias owl:topDataProperty)
+FunctionalDataProperty(:uAlias)
+DataPropertyDomain(:uAlias :Contact)
+DataPropertyRange(:uAlias xsd:string)
+
+# Data Property: :uEmail (:uEmail)
+
+SubDataPropertyOf(:uEmail owl:topDataProperty)
+FunctionalDataProperty(:uEmail)
+DataPropertyDomain(:uEmail :Person)
+DataPropertyRange(:uEmail xsd:string)
+
+# Data Property: :uName (:uName)
+
+SubDataPropertyOf(:uName owl:topDataProperty)
+FunctionalDataProperty(:uName)
+DataPropertyDomain(:uName :Person)
+DataPropertyRange(:uName xsd:string)
+
+# Data Property: :uPersonalNumber (:uPersonalNumber)
+
+SubDataPropertyOf(:uPersonalNumber owl:topDataProperty)
+FunctionalDataProperty(:uPersonalNumber)
+DataPropertyDomain(:uPersonalNumber :Person)
+DataPropertyRange(:uPersonalNumber rdfs:Literal)
+
+# Data Property: :uPhoneNumber (:uPhoneNumber)
+
+SubDataPropertyOf(:uPhoneNumber owl:topDataProperty)
+FunctionalDataProperty(:uPhoneNumber)
+DataPropertyDomain(:uPhoneNumber :Person)
+DataPropertyRange(:uPhoneNumber rdfs:Literal)
+
+# Data Property: :uRelantionshipDescription (:uRelantionshipDescription)
+
+SubDataPropertyOf(:uRelantionshipDescription owl:topDataProperty)
+FunctionalDataProperty(:uRelantionshipDescription)
+DataPropertyDomain(:uRelantionshipDescription :Relantionship)
+DataPropertyRange(:uRelantionshipDescription xsd:string)
+
+# Data Property: :uRelantionshipType (:uRelantionshipType)
+
+SubDataPropertyOf(:uRelantionshipType owl:topDataProperty)
+FunctionalDataProperty(:uRelantionshipType)
+DataPropertyDomain(:uRelantionshipType :Relantionship)
+DataPropertyRange(:uRelantionshipType xsd:string)
+
+
+
+############################
+#   Classes
+############################
+
+# Class: :Action (:Action)
+
+SubClassOf(:Action ObjectExactCardinality(1 :definesActionOf :ComplexCondition))
+
+# Class: :ActiveEvent (:ActiveEvent)
+
+SubClassOf(:ActiveEvent :Event)
+DisjointClasses(:ActiveEvent :PassiveEvent)
+
+# Class: :ComplexCondition (:ComplexCondition)
+
+SubClassOf(:ComplexCondition ObjectExactCardinality(1 :hasAction :Action))
+SubClassOf(:ComplexCondition ObjectExactCardinality(1 :hasCondition :Condition))
+SubClassOf(:ComplexCondition ObjectMaxCardinality(1 :isConditionOfEvent :Event))
+SubClassOf(:ComplexCondition ObjectMaxCardinality(1 :isConditionOfIntervention :Intervention))
+
+# Class: :Condition (:Condition)
+
+SubClassOf(:Condition ObjectExactCardinality(1 :definesConditionOf :ComplexCondition))
+
+# Class: :Contact (:Contact)
+
+SubClassOf(:Contact ObjectExactCardinality(1 :isContactOf :Observer))
+
+# Class: :EmptyIntervention (:EmptyIntervention)
+
+SubClassOf(:EmptyIntervention :Intervention)
+
+# Class: :EmptyResult (:EmptyResult)
+
+SubClassOf(:EmptyResult :InterventionResult)
+SubClassOf(:EmptyResult ObjectExactCardinality(1 :resultedFromInteractionWith :EmptyIntervention))
+
+# Class: :Event (:Event)
+
+SubClassOf(:Event ObjectExactCardinality(1 :isPartOfProgram :Program))
+
+# Class: :EventTrigger (:EventTrigger)
+
+SubClassOf(:EventTrigger ObjectExactCardinality(1 :definesTrigger :Event))
+
+# Class: :InteractionSensor (:InteractionSensor)
+
+SubClassOf(:InteractionSensor :Sensor)
+DisjointClasses(:InteractionSensor :IntervalSensor)
+
+# Class: :IntervalSensor (:IntervalSensor)
+
+SubClassOf(:IntervalSensor :Sensor)
+
+# Class: :Intervention (:Intervention)
+
+SubClassOf(:Intervention ObjectExactCardinality(1 :isPartOfEvent :Event))
+
+# Class: :InterventionResult (:InterventionResult)
+
+SubClassOf(:InterventionResult :Result)
+
+# Class: :MediaIntervention (:MediaIntervention)
+
+SubClassOf(:MediaIntervention :Intervention)
+
+# Class: :MediaResult (:MediaResult)
+
+SubClassOf(:MediaResult :InterventionResult)
+SubClassOf(:MediaResult ObjectExactCardinality(1 :resultedFromInteractionWith :MediaIntervention))
+
+# Class: :MultipleChoiceQuestion (:MultipleChoiceQuestion)
+
+SubClassOf(:MultipleChoiceQuestion :QuestionIntervention)
+
+# Class: :Observer (:Observer)
+
+SubClassOf(:Observer :Person)
+
+# Class: :OpenQuestion (:OpenQuestion)
+
+SubClassOf(:OpenQuestion :QuestionIntervention)
+
+# Class: :Participant (:Participant)
+
+SubClassOf(:Participant :Person)
+
+# Class: :PassiveEvent (:PassiveEvent)
+
+SubClassOf(:PassiveEvent :Event)
+
+# Class: :QuestionIntervention (:QuestionIntervention)
+
+SubClassOf(:QuestionIntervention :Intervention)
+
+# Class: :QuestionResult (:QuestionResult)
+
+SubClassOf(:QuestionResult :InterventionResult)
+SubClassOf(:QuestionResult ObjectExactCardinality(1 :resultedFromInteractionWith :QuestionIntervention))
+
+# Class: :Relantionship (:Relantionship)
+
+SubClassOf(:Relantionship ObjectExactCardinality(1 :isRelationshipOf :Participant))
+
+# Class: :Result (:Result)
+
+SubClassOf(:Result ObjectExactCardinality(1 :isPartOfSession :Action))
+
+# Class: :ScaleQuestion (:ScaleQuestion)
+
+SubClassOf(:ScaleQuestion :QuestionIntervention)
+
+# Class: :SensorResult (:SensorResult)
+
+SubClassOf(:SensorResult :Result)
+SubClassOf(:SensorResult ObjectExactCardinality(1 :resultedFromCollectorOf :Sensor))
+
+# Class: :Status (:Status)
+
+SubClassOf(:Status ObjectExactCardinality(1 :describesStatusOfParticipant :Participant))
+SubClassOf(:Status ObjectExactCardinality(1 :isOnPhase :Phase))
+SubClassOf(:Status ObjectExactCardinality(1 :isRelatedToProgram :Program))
+
+# Class: :TaskIntervention (:TaskIntervention)
+
+SubClassOf(:TaskIntervention :Intervention)
+
+# Class: :TaskParameter (:TaskParameter)
+
+SubClassOf(:TaskParameter ObjectExactCardinality(1 :isParameterOf :TaskIntervention))
+
+# Class: :TaskResult (:TaskResult)
+
+SubClassOf(:TaskResult :InterventionResult)
+SubClassOf(:TaskResult ObjectExactCardinality(1 :resultedFromInteractionWith :TaskIntervention))
+
+
+DisjointClasses(:EmptyIntervention :MediaIntervention :QuestionIntervention :TaskIntervention)
+)
